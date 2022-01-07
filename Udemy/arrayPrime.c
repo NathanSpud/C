@@ -11,7 +11,7 @@ int main()
 
     //intializing array and variables
     //arrayPrime has elements 0-2, set as 1,2,3 for the first set of prime numbers for ease
-    int prime[100] = {1,2,3};
+    int prime[100] = {0,2,3};
     int number[100];
     int i;
     int j;
