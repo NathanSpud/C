@@ -1,6 +1,10 @@
+/* 
+Author: NathanS
+Purpose: Determining credit card requirments
+Date: 11/01/2022
+*/
 #include <string.h>
 #include <stdio.h>
-#include <cs50.h>
 
 
 //American Express( AMEX ) --> 15 digits and starts with 34 or 37
