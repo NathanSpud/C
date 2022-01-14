@@ -1,50 +1,50 @@
 /*
-Author: NathanS
-Purpose: Ask user for 5 input values, find the average
-Date: 11/01/2022
+Author: Nathan S
+Purpose: Ask for 5 type int and 5 type float values, find sum and average
+Date: 14/01/2022
 */
 
 #include <stdio.h>
 
-
 int main()
 {
-    float number00, average00, total00;
-    int number;
+    //initializing & declaring variables for use
+    int number = 0;
+    int sum = 0;
+    int average = 0;
     int i = 0;
     
-    printf("Enter 5 whole numbers.\n");
+    //float variables.
+    float value = 0;
+    float total = 0;
+    float median = 0;
+    float j = 0;
+
+    //do while loop, gets 5 int values
     do
     {
-        printf("Enter a number: ");
-        scanf("%f", &number00);
-        total00 += number00;
-        ++i;
-
-    } while (i<5);
-
-
-    average00 = total00/i;
-    printf("Your total is %.0f.\nYour average is %.2f.\n\n", total00, average00);
-
-
-
-
-
-    i = 0;
-    printf("Enter any 5 numbers.\n");
-    do
-    {
-        printf("Enter a number: ");
+        printf("Enter an int value: ");
         scanf("%d", &number);
-        total00 += number;
+        sum = sum + number;
         ++i;
+    }
+    while ( i < 5);
 
-    } while (i<5);
+    average = sum / i;  
+    printf("\nThe sum is: %d.\nThe average is: %d.\n", sum, average);
+    printf("\n");
 
+    //do while loop, gets 5 float values
+    do
+    {
+        printf("Enter a float value: ");
+        scanf("%f", &value);
+        total = total + value;
+        ++j;
+    }
+    while ( j < 5);
 
-    average00 = total00/i;
-    printf("Your total is %.2f.\nYour average is %.2f.", total00, average00);
-
+    median = total / j;  
+    printf("\nThe sum is: %.2f.\nThe average is: %.2f.\n", total, median);
     return 0;
 }
