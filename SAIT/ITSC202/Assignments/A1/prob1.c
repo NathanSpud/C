@@ -30,8 +30,8 @@ int main()
     }
     while ( i < 5);
 
-    average = sum / i;  
-    printf("\nThe sum is: %d.\nThe average is: %d.\n", sum, average);
+    median = (float)sum / i;  
+    printf("\nThe sum is: %d.\nThe average is: %.2f.\n", sum, median);
     printf("\n");
 
     //do while loop, gets 5 float values
