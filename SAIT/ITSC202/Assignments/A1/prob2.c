@@ -34,17 +34,7 @@ int main(void)
     printf("Use your keyboard to choose an option: ");
     scanf("%s", user);
     printf("You chose option %s.\n", user);
-
-    
-
-
-    
-    //printf("\"%s\"", str1[0]); 
-
-    //printf("Enter a letter associated with your choice: ");
-    //scanf("%s", user);
-
-    //printf("You entered the letter: %s);
+    printf("Thanks for accessing the program .. Quitting! ! !");
 
     
 

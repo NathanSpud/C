@@ -8,7 +8,7 @@ Date: 14/01/2022
 
 int main()
 {
-    //initializing & declaring variables for use
+    //initializing & declaring variables for int vaues
     int number = 0;
     int sum = 0;
     int average = 0;
@@ -30,6 +30,7 @@ int main()
     }
     while ( i < 5);
 
+    //cast type float onto sum for float average
     median = (float)sum / i;  
     printf("\nThe sum is: %d.\nThe average is: %.2f.\n", sum, median);
     printf("\n");
