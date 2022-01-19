@@ -11,7 +11,6 @@ int main()
     //initializing & declaring variables for int vaues
     int number = 0;
     int sum = 0;
-    int average = 0;
     int i = 0;
     
     //float variables.
@@ -36,6 +35,7 @@ int main()
     printf("\n");
 
     //do while loop, gets 5 float values
+    //while j is less than 5, while loop is true and repeats
     do
     {
         printf("Enter a float value: ");
@@ -47,5 +47,6 @@ int main()
 
     median = total / j;  
     printf("\nThe sum is: %.2f.\nThe average is: %.2f.\n", total, median);
+
     return 0;
 }

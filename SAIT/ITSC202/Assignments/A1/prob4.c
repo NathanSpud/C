@@ -23,8 +23,8 @@ int main(void)
     //update formulas
     //E)aval is not changed because the assignment operator, only takes the out/properties of the right and designates it to the left
     //bval remains unchanged because it can only store 16 bits worth of values(-1) and aval +4 is one value too high
-    //2^16 = 65536 (-1 for 0), 
-    bval = aval + 4;
+    //2^16 = 65536 (-1 for 0),so 65535 
+    bval = aval + 4; //total 65536
     cval = aval + 5; 
     //F)bval could not be assigned the value from the operands on the right, so remainded 0
     //F)while cval, without type short, cval does not have data limitation like bval and could store the righ operands value
