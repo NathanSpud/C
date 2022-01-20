@@ -13,7 +13,8 @@ int main(void)
     //D)the short keyword reduces the bit size of data the variable can store to 16bits
     unsigned short int aval = 65532;
     unsigned short int bval = 0;
-    //B)cval is just initilized here, and in absence of declartion, c assigns 1.
+    //B)cval is just declared here, and in absence of intialization, c 
+    //will assign it a value, often times 0, however you cannot gurantee it.
     int cval;
 
 

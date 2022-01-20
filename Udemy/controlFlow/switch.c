@@ -8,7 +8,7 @@ Date: 29/12/2021
 int main()
 {
     enum weekday {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
-    enum weekday Today = Monday;
+    enum weekday Today = Wednesday;
     
     printf("What day of the week is it?\n");
     //scanf("%s", Today);
@@ -36,7 +36,7 @@ int main()
         case Tuesday:
             printf("Today is Tuesday\n");
             break;
-        case Wednesday:
+       // case Wednesday:
             printf("Today is Wednesday\n");
             break;
         default:

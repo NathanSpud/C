@@ -18,25 +18,10 @@ Date: 17/01/2022
 
 int main(void)
 {
-    int nmbr, sqd, i;
+    int i;
+    printf("%d", i);
+    return 0;   
 
-
-    do
-    {
-        printf("Please give a number between 10 and 20: ");
-         scanf("%d", &nmbr);
-    }
-    while ( (nmbr < 10) || (nmbr > 20));
-
-
-    sqd = nmbr * nmbr;
-
-
-    printf("\nThe square of %d is %d.\n", nmbr, sqd);
-
-
-
-    return 0;
 
 }
 
