@@ -13,14 +13,16 @@ Date: 17/01/2022
 */
 
 
-#include <stdio.h>
+#include<stdio.h>
 
 
-int main(void)
+int main (void)
 {
-    int i;
-    printf("%d", i);
-    return 0;   
+    printf("\thello");
+    printf("\n\thello");
+    
+    
+    return 0; 
 
 
 }
