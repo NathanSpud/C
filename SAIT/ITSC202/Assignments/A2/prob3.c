@@ -31,11 +31,11 @@ int main(void)
 
     int counter = 1;
 
-    printf("Enter 5 float numbers.");
+    printf("Enter 5 float numbers.\n");
     //do while loop for 5 floats.
     do
     {
-        printf("\nEnter number %d: ", counter);
+        printf("Enter number %d: ", counter);
         scanf("%f", &value);
         total = total + value;
         counter += 1;

@@ -9,7 +9,7 @@ Date: 21/01/2022
 int main(void)
 {   
 
-    int counter, row;
+    int row;
 
     for( row = 1; row < 8; ++row )
     {
