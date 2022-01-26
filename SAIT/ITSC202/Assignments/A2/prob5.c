@@ -17,7 +17,7 @@ int main(void)
     do
     {
         
-        printf("Please enter a number in range 0 - 511 inclusive: ");
+        printf("\tPlease enter a number in range 0 - 511 inclusive: ");
         scanf("%d", &decimal);
         //reset variables for each iteration
         octal = 0;
@@ -27,13 +27,13 @@ int main(void)
         //if tree to determine if decimal meets conditions
          if ( holder < 0)
         {
-            printf("Decimal value %d is smaller than 0.\nQuitting Program! !", decimal);
+            printf("\tDecimal value %d is smaller than 0.\n\tQuitting Program! !", decimal);
             break;
    
         }
         else if (holder > 511)
         {
-            printf("Decimal value %d is larger than 511.\nQuitting Program! !", decimal);
+            printf("\tDecimal value %d is larger than 511.\n\tQuitting Program! !", decimal);
             break;
         
         }
@@ -48,7 +48,7 @@ int main(void)
             place = place *10;
         }
 
-         printf("Your number as octal (reversed) is: %d\n", octal);
+         printf("\t  Your number as octal (reversed) is: %d\n\n", octal);
 
     }while ( (holder >= 0 ) && (holder <= 511) );
     
