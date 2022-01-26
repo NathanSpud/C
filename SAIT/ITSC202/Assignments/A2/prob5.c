@@ -9,29 +9,36 @@ int main(void)
 {
 
     //initlizaing variables
-    int octal = 0;
     //initilized at 1 because first remainder value will be in ones place
-    int place = 1;
-    int decimal;
-
-    //ask user for an integer between 0-511
-    printf("Please enter a number in range 0 - 511 inclusive: ");
-    scanf("%d", &decimal);
-
-    //if tree to determine if decimal meets conditions
-    if ( decimal < 0)
-    {
-        printf("Decimal value %d is smaller than 0.\nQuitting Program! !", decimal);
+    //holder will track decimal value in loop without being changed
+    int octal = 0, place = 1, decimal, holder;
    
-    }
-    else if (decimal > 511)
+   //do while loop to repeat and give octal values
+    do
     {
-        printf("Decimal value %d is larger than 511.\nQuitting Program! !", decimal);
         
-    }
-    else
-    {
-            //octal algorithim
+        printf("Please enter a number in range 0 - 511 inclusive: ");
+        scanf("%d", &decimal);
+        //reset variables for each iteration
+        octal = 0;
+        place = 1;
+        holder = decimal;
+
+        //if tree to determine if decimal meets conditions
+         if ( holder < 0)
+        {
+            printf("Decimal value %d is smaller than 0.\nQuitting Program! !", decimal);
+            break;
+   
+        }
+        else if (holder > 511)
+        {
+            printf("Decimal value %d is larger than 511.\nQuitting Program! !", decimal);
+            break;
+        
+        }
+
+        //octal algorithim
         while ( decimal != 0)
         {
 
@@ -41,9 +48,9 @@ int main(void)
             place = place *10;
         }
 
-         printf("Your number as octal (reversed) is: %d", octal);
-    }
-    
+         printf("Your number as octal (reversed) is: %d\n", octal);
 
+    }while ( (holder >= 0 ) && (holder <= 511) );
+    
     return 0;
 }

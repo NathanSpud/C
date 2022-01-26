@@ -1,20 +1,9 @@
 /*
-
-
 Author: NathanS
-
-
 Purpose: 
 1. print the address of each variable using the & operator
-
-
-
 Date: 25/01/2022
-
-
 */
-
-
 #include<stdio.h>
 
 

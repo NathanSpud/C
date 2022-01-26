@@ -1,6 +1,6 @@
 /*
 Author: NathanS
-Purpose: Print a pattern
+Purpose: Print a pattern that resembles the problems
 Date: 19/01/2021
 */
 
