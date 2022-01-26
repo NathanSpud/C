@@ -5,11 +5,8 @@ Author: NathanS
 
 
 Purpose: 
-1. print the address of each variable using the & operator
-
-
-
-Date: 25/01/2022
+use strchr
+Date: 26/01/2022
 
 
 */
@@ -25,7 +22,7 @@ int main (void)
     char ch ='q';
     char *pGot_Char = NULL;
     pGot_Char = strchr(str, ch);
-    printf("%s", pGot_Char)
+    printf("%s", pGot_Char);
 
     return 0;
 }
