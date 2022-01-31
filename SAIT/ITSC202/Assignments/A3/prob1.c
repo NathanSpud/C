@@ -18,7 +18,8 @@ int main()
 
     char string[40];
     char option;
-    int counter, i, j;
+    int i = 0;
+
 
     //printf and scanf statements to grab what function the user wants done
     printf("=======================================================\n");
@@ -38,19 +39,25 @@ int main()
     }
     //if one of the 3 conditions are false, loops breaks, if not, continues
     while( (option != '1') && (option != '2') && (option != 'q'));
-
-
-
-    //testing input
-    printf("\n%c\n", option);
     
-    //get users char string array for function they chose
+    //if tree with nested loops for each respective function
+    //Reverse titlecase
     if( option == '1')
     {
         printf("Enter a string length <= 40: ");
-        scanf("%s", string);
+        scanf("%[^\n]",&string);
+    
+    
+        /*while( string[i] != '\0')
+        {
+            printf("\n%c", string[i]);
+            string[i] = string[i] - 32;
+            printf("%c", string[i]);
+            ++i;
+        }*/
 
     }
+    //Upper to Lower case toggle
     else if( option == '2')
     {
         printf("Enter a string length <= 40: ");
@@ -58,6 +65,7 @@ int main()
 
 
     }
+    //Quit
     else
     {
         printf(" Quitting. . .");
@@ -65,7 +73,7 @@ int main()
     
 
     //testing input
-    printf("\n%s and %d", string, string[1]);
+    printf("\n%s and %d and %d", string, string[1], string);
 
 
 
