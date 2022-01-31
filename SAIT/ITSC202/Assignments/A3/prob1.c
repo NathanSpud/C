@@ -129,78 +129,68 @@ int main()
     //Upper to Lower case toggle
     else if( option == '2')
     {
-        
+        i = 0;
         printf("*** Enter a string length <= 40:");
         scanf(" %[^\n]",string);
-        
-        //checks to see if first string character is a letter
-        if ( (string[i] >= 65 && string[i] <= 90 ) || ( string[i] >=97 && string[i] <=122))
-        {
-            //Checks to see if letter is lowercase, makes upper 
-            if( string[i] >= 91)
-            {
-                string[i] = string[i] - 32;
-                ++i; //updates to next letter
-                
-            }
-            else if ( string[i] <= 90)
-            {
-                ++i;
-            }           
-        }
 
-        //while loop until end of string
-        while( string[i] != '\0')
+        //first character should start capital, this will make sure
+        if( (string[i] >= 65) && (string[i] <= 90))
         {
-            
-            //if there is a nonletter, move to next character and make title case assessment
-            if( ( (string[i] <= 64) || (string[i] >= 91 && string[i] <=96) || (string[i] >= 123) ) )
+            ++i;
+        }
+        else if((string[i] >= 97) && (string[i] <= 122) )
+        {
+            string[i] = string[i] - 32;
+        }
+        else
+        {
+            ++i;
+        }
+        
+
+        //while loop until string terminates
+        while (string[i] != '\0' )
+        {
+            //also ensures toggeling between "even" and "odd" character positions
+            if ( i%2 == 1 )
             {
-                ++i;
-                //if statement so that commas appropriatly accounted for
-                if ( string[i-1] == 39)
-                {
-                    ++i;
-                    if( (string[i] >= 65) && (string[i] <= 90) )
-                    {
-                        string[i] = string[i] + 32;
-                        ++i;
-                    }
-                    else if( (string[i] >= 97) && (string[i] <= 122) )
-                    {
-                        ++i;
-                    }
-                }
-            
-                //if string character is not arleady lowercase, make it lowercase
-                else if ( (string[i] >= 65) && (string[i] <= 90) )
+                if( (string[i] >= 97) && (string[i] <= 122))
                 {
                     ++i;
                 }
-                else if((string[i] >= 97) && (string[i] <= 122) )
+                else if((string[i] >= 65) && (string[i] <= 90) )
+                {
+                    string[i] = string[i] + 32;
+                    ++i;
+                }
+                else if( (string[i] <=64) || ((string[i] >= 91) && (string[i] <= 96 ))|| (string[i] >= 123))
+                {
+                    ++i;
+                }
+            }
+            //toggles everything to upper class
+            else
+            {
+                if( (string[i] >= 97) && (string[i] <= 122))
                 {
                     string[i] = string[i] - 32;
                     ++i;
                 }
+                else if((string[i] >= 65) && (string[i] <= 90) )
+                {
+                
+                    ++i;
+                }
+                else if( (string[i] <=64) || ((string[i] >= 91) && (string[i] <= 96 ))|| (string[i] >= 123))
+                {
+                    ++i;
+                }
             }
-
-            //if string is uppercase, make it lowercase
-           //added an extra range for explicity (not needed)
-            else if( (string[i] >= 97 && string[i] <= 122) )
-            {             
-                ++i;    
-            }
-            //if character is already uppercase, move onto next character
-            else if ( (string[i] >= 65 && string[i] <= 90))
-            {
-                string[i] = string[i] + 32;
-                ++i;
-            }     
         }
-       
-        printf("*** UpperLowerToogle: %s ***\n", string);
+        printf("*** UpperLowerToggle: %s ***\n", string);
     }
 
+    
     //Quit.... this was my favourite line of the problem.
     else
     {
