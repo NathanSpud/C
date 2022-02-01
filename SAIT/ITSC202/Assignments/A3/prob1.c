@@ -10,6 +10,7 @@ Purpose:
 •	If title case is chosen all except the first letter of each word will become lowercase. This means if the first letters of each word are already uppercase they will remain so
 Date: 30/01/2022
 */
+
 #include <stdio.h>
 
 int main()
@@ -32,6 +33,7 @@ int main()
 
         printf("\n\tEnter choice: ");
         scanf("%c", &option);
+        //if any condition not equal to menu options, print this message
         if ( (option != '1') && ( option != '2') & ( option != 'q') )
         {
             printf("\t***** NO SUCH OPTION IN MENU!!! Please try again!!!*****\n");
@@ -70,7 +72,7 @@ int main()
         
            
         }
-        //while loop until end of string
+        //while loop until end of string (all strings have a null character at the end, auto assigned in arrays)
         while( string[i] != '\0')
         {
             
