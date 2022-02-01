@@ -24,19 +24,19 @@ int main()
   
     //printf and scanf statements to grab what function the user wants done
     printf("=======================================================\n");
-    printf("Please choose an operation from the menu\n");
-    printf("\t1. Reverse Titlecase\n\t2. Upper to lower case toggle\n\tq. Quit\n");
 
     //do while loop asking for 1 of the 3 available choices
     do
     {
+        printf("Please choose an operation from the menu\n");
+        printf("\t1. Reverse Titlecase\n\t2. Upper to lower case toggle\n\tq. Quit\n");
 
         printf("\n\tEnter choice: ");
-        scanf("%c", &option);
+        scanf(" %c", &option);
         //if any condition not equal to menu options, print this message
         if ( (option != '1') && ( option != '2') & ( option != 'q') )
         {
-            printf("\t***** NO SUCH OPTION IN MENU!!! Please try again!!!*****\n");
+            printf("     ***** NO SUCH OPTION IN MENU!!! Please try again!!!*****\n");
         }
     }
     //if one of the 3 conditions are false, loops breaks, if not, continues
