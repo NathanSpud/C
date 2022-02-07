@@ -133,7 +133,7 @@ int main()
     {
         i = 0;
         printf("*** Enter a string length <= 40:");
-        scanf(" %[^\n]",string);
+        scanf(" %[^\n]",string); //this means take all characters until new line
 
         //first character should start capital, this will make sure
         if( (string[i] >= 65) && (string[i] <= 90))
