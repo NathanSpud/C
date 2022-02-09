@@ -11,29 +11,110 @@ Date: 04/02/2022
 */
 
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+
 
 int main(void)
 {
     //Declare array for binary number and size
     //include an extra element for null character
     char binary[9];
+    //cause im lazy, this will be my array storing powers of, up to 2^8.
+    int powers[8] = {128, 64, 32, 16, 8, 4, 2, 1};
     //other variables to be used to track size, counter and etc
+    bool Boolean = true; 
+    int i = 0;
+    int j = 0;
+    int number = 0;
+    int odd = 0;
 
 
-
+    //repeating loop to enter an 8 bit binary number
     do
-    {
-        //Asks user for their binary number to be converted
-        printf("========================================\n");
-        printf("Enter an 8 bit binary number: ");
-        scanf(" %[^a-zA-z]", &binary);
+    {   
+        //resets values for repeated loop purposes
+        odd = 0;
+        number = 0;
+        i = 0;
+        j = 0;
+        //asks user for a binary number
+        printf("==================================");
+        printf("\nEnter an 8 bit binary number: ");
+        scanf(" %s", &binary);
 
-        //loop to check size and also check for other conditions
-        //will simultaneously check for digits not 1/0 and conver to hex
-        while( size != )
+        //checks size of string.(array has 9 to fit the null character '\o', but strlen does not count that)
+        if ( (strlen(binary)) != 8 )
+        {
+            printf("You didn't enter the correct number of digits.\n", strlen(binary));
+            printf("Quitting\n");
+            printf("==================================");      
+            break;
+        }
 
-    } while (/* condition */);
+      
+        //checks for values other than 1 and 0, and tracks what bit was not a good bit
+        while( binary[i] != '\0')
+        {
+             
+            if ( binary[i] == '1' || binary[i] == '0')
+            {
+                ++i;
+
+                continue;
+            }
+            else
+            {
+                j = 8 - i;
+                printf("  >>>>Bit: %d is not a binary number ----> Quitting Program <<<<", j);
+                Boolean = false;
+                //only breaks inner most loop
+                break;
+
+            }
+        }
+        //double checks if last condition was not a 1 or 0, break most inner loop
+        if( Boolean == false)
+        {
+            break;
+        }
+       
+  
+        //I really wanted to use the atoi function here and pow() THIS FEELS SO MUCH HARDER WITHOUT THEM.
+        //nevermind, i just as an Array lol
+        //converts a string with number characters in it to int data type with the numbers. (skips anything that is not a number)
+        for( i = 7; i >= 0; --i)
+        {
+            if ( binary[i] == '1')
+            {
+                number = number + powers[i];
+                ++odd;
+            }
+        }
+        //prints decimal value that was just converted and uses %X to print hexadecimal value
+        printf("  >>>> Decimal equivalent: %d -> Hex: 0x%X <<<<\n", number, number);
+
+
+        //checks for odd and even number of 1s, and if there is no 1s.
+        if(odd%2==0)
+        {
+            printf("  >>>> Even number of 1's <<<<\n");
+        }
+        else if(odd%2 ==1)
+        {
+            printf("  >>>> Odd number of 1's <<<<\n");
+        }
+        else
+        {
+            printf("  >>>> No ones entered <<<<\n");
+        }
+
+
+    } while ( (Boolean == true) );
     
+
 
     return 0;
 }
