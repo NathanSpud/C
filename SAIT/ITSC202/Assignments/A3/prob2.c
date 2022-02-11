@@ -10,11 +10,15 @@ a.	If the number of digits entered is more than or less than 8 your program shou
 Date: 04/02/2022
 */
 
+//stdbool header files after preproccsor symbol, to use Bool function
+//string header to use some string functions, particularly strlen. i could have just done a for loop and tracked the iterations until 
+        // char binary[i] == '\0'
+        //but i made this code and realized after I shouldnt have used it. i hope this is okay.
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stdlib.h>
-#include <math.h>
+
+
 
 
 int main(void)
@@ -23,6 +27,7 @@ int main(void)
     //include an extra element for null character
     char binary[9];
     //cause im lazy, this will be my array storing powers of, up to 2^8.
+    //also correlates to the binary referencing, ie 10010011, 
     int powers[8] = {128, 64, 32, 16, 8, 4, 2, 1};
     //other variables to be used to track size, counter and etc
     bool Boolean = true; 
@@ -40,6 +45,7 @@ int main(void)
         number = 0;
         i = 0;
         j = 0;
+
         //asks user for a binary number, character
         printf("==================================");
         printf("\nEnter an 8 bit binary number: ");
@@ -51,6 +57,7 @@ int main(void)
             printf("You didn't enter the correct number of digits.\n", strlen(binary));
             printf("Quitting\n");
             printf("==================================");      
+            //breaks inner most loop, one one inside.
             break;
         }
 

@@ -9,7 +9,6 @@ Date: 09/02/2022
 */
 #include <stdio.h>
 
-
 int main(void)
 {
     //Declare array for binary number and char
@@ -22,7 +21,7 @@ int main(void)
     int j = 0;
 
 
-    printf("======================\n");
+     printf("========================================================\n");
 
     //loop to to take 6 different numbers and store in array
     for ( i = 0; i <= 5; ++i)
@@ -32,42 +31,47 @@ int main(void)
   
     }
 
+
     //make text red and get user input w/ spaces
-    printf("======================\n ");
-    printf(“\033[0;31m”); 
-    printf("Enter 6 characters seperated by space: "); 
-    printf(“\033[0m”);
-    scanf(" %[^\n]s", letter);
-    printf("======================");
+    //learned https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c
+    printf("========================================================\n");
+    printf("\033[0;31mEnter 6 characters seperated by space: \033[0m");
+    scanf(" %[^\n]c", &letter);
+    printf("========================================================");
+
+
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    //******I didnt have time to figure this out, however after this portion of code, number[0] becomes zero. and I dont know why
+    //affects my loop to print out values
+  
 
 
     //print out column titles in yellow
-    printf("================================================================\n");
-    printf(“\033[0;33m”);
-    printf("\n   Element \tAddress \tHexadecimal Value \Decimal Value\n"); 
-    printf(“\033[0m”);
+    //learned https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c
+    printf("\n========================================================");
+    printf("\033[0;33m\n   Element \tAddress \tHexadecimal Value \tDecimal Value\n\033[0m");
+
 
 
     //loop to print out data for integers
     for( i = 0; i < 6; ++i)
     {
 
-        printf("Integer[%d]\t%p\tOx%x\t%d\n", i, &number[i] , number[i], number[i]);
+        printf("Integer[%d] \t%p \t0x%x \t \t \t %d\n", i, &number[i] , number[i], number[i]);
 
     }
   
     //print out column titles in yellow for character array
-    printf("================================");
-    printf(“\033[0;33m”);
-    printf("\n   Element \tAddress \tHexadecimal Value \tCharacter Value\n"); 
-    printf(“\033[0m”);
+    //learned https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c
+    printf("================================================================");
+    printf("\033[0;33m\n   Element \tAddress \tHexadecimal Value \tCharacter Value\n\033[0m");
     printf("================================================================\n");
 
     
     //Loop to print our charArray data
     for( i = 0; i < 12; i+=2)
     {
-        printf("ArrChar[%d]\t%p\tOx%a\t%c\n", j,&letter[i],letter[i],letter[i]);
+        printf("ArrChar[%d] \t%p \t0x%X \t \t \t %c \n", j,&letter[i],letter[i],letter[i]);
         ++j;
     }
 
