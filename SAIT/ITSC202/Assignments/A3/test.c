@@ -21,13 +21,11 @@ int main()
     char option;
     int i = 0;
 
-  
-    //printf and scanf statements to grab what function the user wants done
-    printf("=======================================================\n");
 
-    //do while loop asking for 1 of the 3 available choices
+    //do while loop asking for 1 of the 3 available choices, repeats until option q
     do
     {
+        printf("\n=======================================================\n");
         printf("Please choose an operation from the menu\n");
         printf("\t1. Reverse Titlecase\n\t2. Upper to lower case toggle\n\tq. Quit\n");
 
@@ -188,7 +186,7 @@ int main()
 
         
         //Quit.... this was my favourite line of the problem.
-        else
+        else if ( option == 'q')
         {
             printf(" Quitting. . .");
         }

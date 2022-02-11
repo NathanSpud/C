@@ -26,6 +26,7 @@ int main(void)
     //Declare array for binary number and size
     //include an extra element for null character
     char binary[9];
+    char option;
     //cause im lazy, this will be my array storing powers of, up to 2^8.
     //also correlates to the binary referencing, ie 10010011, 
     int powers[8] = {128, 64, 32, 16, 8, 4, 2, 1};
@@ -35,6 +36,7 @@ int main(void)
     int j = 0;
     int number = 0;
     int odd = 0;
+    int no = 0;
 
 
     //repeating loop to enter an 8 bit binary number
@@ -45,6 +47,7 @@ int main(void)
         number = 0;
         i = 0;
         j = 0;
+        no = 0;
 
         //asks user for a binary number, character
         printf("==================================");
@@ -99,25 +102,39 @@ int main(void)
                 number = number + powers[i];
                 ++odd;
             }
+            else if( binary[i] == '0')
+            {
+                ++no;
+            }
         }
         //prints decimal value that was just converted and uses %X to print hexadecimal value
-        printf("  >>>> Decimal equivalent: %d -> Hex: 0x%X <<<<\n", number, number);
+        printf("  >>>> Decimal equivalent: %d -> Hex: 0x%x <<<<\n", number, number);
 
 
         //checks for odd and even number of 1s, and if there is no 1s.
-        if(odd%2==0)
+        if ( odd > 0)
         {
-            printf("  >>>> Even number of 1's <<<<\n");
-        }
-        else if(odd%2 ==1)
-        {
-            printf("  >>>> Odd number of 1's <<<<\n");
+            if(odd%2==0)
+            {
+                printf("  >>>> Even number of 1's <<<<\n");
+            }
+            else if(odd%2 ==1)
+            {
+                printf("  >>>> Odd number of 1's <<<<\n");
+            }
         }
         else
         {
             printf("  >>>> No ones entered <<<<\n");
         }
 
+        //I forgot to ask user y/n. added weird code to accomodate
+        printf("\nWould you like to try again? Enter y/n: ");
+        scanf(" %c", &option);
+        if ( option != 'y')
+        {
+            Boolean = false;
+        }
 
     } while ( (Boolean == true) );
     
