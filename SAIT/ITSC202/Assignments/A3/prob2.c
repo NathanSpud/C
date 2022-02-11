@@ -40,7 +40,7 @@ int main(void)
         number = 0;
         i = 0;
         j = 0;
-        //asks user for a binary number
+        //asks user for a binary number, character
         printf("==================================");
         printf("\nEnter an 8 bit binary number: ");
         scanf(" %s", &binary);
