@@ -33,6 +33,7 @@ void fun4(int val1[], int val2)    // using the val1[] we are passing variables 
         val1[count] += 10;
     }
     printf("val2: %d\n", val2);
+    
 }
  
 int fun5(int val1[], int val2)    // using the val1[] we are passing variables between function by reference.
