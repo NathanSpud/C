@@ -20,8 +20,11 @@ Purpose:
 Date: 23/02/2022
 */
 #include <stdio.h>
-#include <stdlib.h>
+//I really thought that a strlen would make this process easier. I can 
+//create semi bulky loop if you want me too.
 #include <string.h>
+//I want this headers for my random number generator
+#include <stdlib.h>
 #include <time.h> 
 
 //constant declared, user only gets 5 attempts
@@ -43,7 +46,7 @@ int main(void)
     
    
 
-    //overall loop to repeat convert 
+    //overall loop to repeat convert and getString until Attempts reach max
     while (Attempts != EXIT)
     {
         //calls getString --> make sure string is right size
