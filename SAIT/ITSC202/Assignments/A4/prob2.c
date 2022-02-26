@@ -113,11 +113,12 @@ void challenge(void)
 int convert(char string[21])
 {
     
-    int x = strlen(string);
-    int y = x;
+    int x = strlen(string); //defines length of loop
+    int y = x; // will be a changing variables (essential b-a in the code, or last position - current)
     int i = 0;
     int value = 0;
     
+    //algorithim to convert string into a decimal code.
     while( i < x )
     { 
         
@@ -136,7 +137,6 @@ int convert(char string[21])
 void getString(char string[21])
 {
 
-    //char string[21];
     
     //do while loop to get a code 12-20 characters
     do
