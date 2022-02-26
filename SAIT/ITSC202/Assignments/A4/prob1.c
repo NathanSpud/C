@@ -3,10 +3,10 @@ Author: NathanS
 Purpose: Get user input and determine if it is a palindrome or not
 Date: 23/02/2022
 */
-#include<stdio.h>
+#include <stdio.h>
 #define COUNT 5    // number of strings to accept from user
 
-//prototype declared
+//prototypes declared w/ respective variables being passed through
 int getStrings(char string[COUNT][31]);
 int reverseStr(char string[COUNT][31], int i);
 int isPalindrome(char string[COUNT][31], int x);
@@ -24,8 +24,8 @@ int main(void)
     printf("\nnumber of palindromes were %d", success);
 }   
 
-//
-int getStrings(char string[COUNT][31])
+//function to get strings from user.
+int getStrings( char string[COUNT][31] )
 {
     //length is a local variable to track length of strings
     //row is a local variable to determine what row the longest string is on
@@ -35,7 +35,7 @@ int getStrings(char string[COUNT][31])
     int row = 0;
 
     //loop to get 5 strings from user
-    while ( i < COUNT)
+    while ( i < COUNT )
     {
         printf("please enter string %d: ", i + 1);
         scanf(" %[^\n]s", string[i]);
@@ -43,11 +43,11 @@ int getStrings(char string[COUNT][31])
     }
     
     //loop to find length of each string and which is the longest
-    i=0;
-    while(i<COUNT)
+    i = 0;
+    while( i < COUNT ) 
     {   
         //we are simply tracking j for size of string
-        for(j=0; string[i][j] != '\0'; ++j)
+        for( j = 0; string[i][j] != '\0'; ++j )
         {
           //chicken lips for explicit declaration.    
         }
@@ -68,10 +68,11 @@ int getStrings(char string[COUNT][31])
 
 //uses an algorithim to determine if the string is a palindrome or not
 //now, as I review this function, I realize it doesn't reversethe string like you asked
-//HOWEVER I argue, that the greater intention of the function is to return 1, o
+//HOWEVER I argue, that the greater intention of the function is to return 1, 0
 int reverseStr(char string[COUNT][31], int i)
 {
 
+    //made an int array to store 1 and 0 values, will be passthrough later to isPlaindrome
     int j = 0;
     int k = 0;
     int output[4];
@@ -86,13 +87,13 @@ int reverseStr(char string[COUNT][31], int i)
     while( k <= j)
     {   
         //if statement comparing first and last character, if equal, it is a palindrome
-        if( string[i][k] == string[i][j-1])
+        if( string[i][k] == string[i][j-1] )
         {
             output[i] = 1;
             --j;
             ++k;
         }
-        else if (  string[i][k] != string[i][j-1])
+        else if (  string[i][k] != string[i][j-1] )
         {
             //breaks the inner most whle loop
             output[i] = 0;
@@ -109,6 +110,7 @@ int reverseStr(char string[COUNT][31], int i)
 //too determine if the strings entered are palindromes or not.
 int isPalindrome(char string[COUNT][31], int x)
 {
+    //int test will be taking and storing the values from reverseStr
     int i = 0;
     int j = 0;
     int test[4];  
@@ -141,6 +143,6 @@ int isPalindrome(char string[COUNT][31], int x)
     printf("\n\nThe longest word was %d characters long", x);
 
 
-    //return value as number palindromes
+    //return value as number palindromes found.
     return j;
 }

@@ -1,29 +1,13 @@
 /*
 Author: NathanS
-Purpose: 
-•	The program will have the following functions:
-1.	getString:
-    a.	Gets the user’s security code.
-    b.	No return value is returned.
-2.	challenge:
-    a.	Prints a riddle if the user entered the correct security code
-    b.	No return value or parameter
-3.	convert:
-    a.	Takes the user’s security code and converts it to a number using the following algorithm:
-        -	The algorithm to convert the string to a number will be as follows:
-        Value += character ascii value * (length of string - offset of character)
-    b.	The function returns the calculated value associated with the security code.
-    c.	The security code should produce a value of 5183
-    -	If the code is 5183, the program should call challenge and print 1 of 3 riddles. The user will enter an answer to the riddle and get a randomly generated response.
-    -	If the value is NOT 5183, the program should prompt the user, that there was an issue and allow the user a total of 5 attempts. If the code is still not correct the program will terminate.
-
+Purpose: Determine if a users string when converted using an algorith is the right code.
 Date: 23/02/2022
 */
 #include <stdio.h>
 //I really thought that a strlen would make this process easier. I can 
 //create semi bulky loop if you want me too.
 #include <string.h>
-//I want this headers for my random number generator
+//I want these headers for my random number generator
 #include <stdlib.h>
 #include <time.h> 
 
@@ -46,7 +30,7 @@ int main(void)
     
    
 
-    //overall loop to repeat convert and getString until Attempts reach max
+    //overall loop to repeat convert and getString until Attempts reach max or right code
     while (Attempts != EXIT)
     {
         //calls getString --> make sure string is right size
@@ -54,7 +38,7 @@ int main(void)
 
 
         //calls convert function, sees if string is the right code
-        //returns value that is a 
+        //returns value that value and stores in x
         x = convert(string);
     
         
@@ -94,11 +78,12 @@ int main(void)
 void challenge(void)
 {   
     srand(time(NULL));
-    //generates a random number between 0 and 2
+    //generates a random number between 0 and 2 and then 0 and 4
+    //this is needed because the arrays are one size too large for the rows
     int r; 
-    r = rand() % 3; //for riddles
+    r = rand() % 2; //for riddles
     int A;  
-    A = rand() % 6; //for answers
+    A = rand() % 5; //for answers
     char answer[100];
     char riddle[3][100] = {
         {"Mississippi has four S’s and four I’s. Can you spell that without using S or I?"},
