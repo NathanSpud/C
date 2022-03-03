@@ -1,5 +1,5 @@
-#ifndef FUN1_H
-#define FUN1_H
+#ifndef FUN1_H //standaridized way fun1 fun1_h //if the preprocessor doesnt see the name FUN1_H 
+#define FUN1_H //
  
 #include<stdio.h>
 #include<stdlib.h>

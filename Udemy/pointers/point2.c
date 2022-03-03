@@ -21,6 +21,6 @@ int main(void)
 
     //cast to size of as size_t is an implemenation of defined interger type
     //cast to prevent warning
-    printf("pnumbers size: %d bytes\n", (int)sizeof(pnumber));
+    printf("pnumbers size: %zu bytes\n", (int)sizeof(pnumber));
     return 0;
 }
