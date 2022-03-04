@@ -22,5 +22,10 @@ int main(void)
     //cast to size of as size_t is an implemenation of defined interger type
     //cast to prevent warning
     printf("pnumbers size: %zu bytes\n", (int)sizeof(pnumber));
+
+    //memory alignment --> research about the memory allocation, explains 12 base 10 in cbfc
+
+ 
+
     return 0;
 }
