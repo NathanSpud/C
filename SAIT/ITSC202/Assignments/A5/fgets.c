@@ -1,3 +1,8 @@
+/*
+Author: NathanS
+Purpose: Experimenting with fgets
+Date: 04/03/2022
+*/
 #include <stdio.h>
 
 int main()

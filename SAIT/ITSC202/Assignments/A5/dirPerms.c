@@ -2,22 +2,12 @@
 #include<stdlib.h>
 #include<string.h>
 
-int countSpaces(char *mystr)
-{
-    int count = 0;
-    int space = 0;
+int countSpaces(char *mystr);
 
-    while(mystr[count] != '\0')
-    {
-        if(mystr[count] == ' ' && (count != 0 && mystr[count-1 ] != ' '))
-            space++;
-        count++;
-    }
-    return space;
-}
 
 int main (int argc, char *argv[])
 {
+    //
     FILE *program_output = popen("ls -al /usr/include", "r");
 
     if(program_output == NULL)
@@ -54,3 +44,18 @@ int main (int argc, char *argv[])
     return 0;
 }
 
+
+
+int countSpaces(char *mystr)
+{
+    int count = 0;
+    int space = 0;
+
+    while(mystr[count] != '\0')
+    {
+        if(mystr[count] == ' ' && (count != 0 && mystr[count-1 ] != ' '))
+            space++;
+        count++;
+    }
+    return space;
+}
