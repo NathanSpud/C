@@ -7,7 +7,7 @@ int main()
 {
    printf("%d \n", stringLength("stringLength test"));
    printf("%d \n", stringLength(""));
-   printf("%d \n", stringLength("jason"));
+   printf("%d \n", stringLength("nathan"));
 
     return 0;
 }
