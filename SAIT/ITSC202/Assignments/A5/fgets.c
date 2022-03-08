@@ -11,7 +11,7 @@ int main()
     
 
     printf("Enter a string: ");
-    fgets(string, 15, stdin);
+    fgets(string, 15, stdin); //executing the fgets command, 
 
     printf("string return: %s\n", string);
   
