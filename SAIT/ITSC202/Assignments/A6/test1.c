@@ -3,14 +3,14 @@
 #include <string.h>
 
 int number(char argString[]);
-void operations(char argStringC[], int tracker[], int place[], int i);
+int operations(char argStringC[], int numbers[], int i);
 int calc(char argString[], int tracker[], int numbers[], int place[]);
 
 void main(int argCounter, char *argString[])
 {
-    int numbers[5];
-    int tracker[5] = {0, 0, 0, 0, 0};
-    int place[5];
+    int numbers[10];
+    int tracker[10];
+    int place[10];
 
     int i = 0;
     int x;
@@ -20,30 +20,27 @@ void main(int argCounter, char *argString[])
     {
         //store numbers
         numbers[i] = number(argString[i+1]);
+        printf("number[%d] %d\n", i, numbers[i]);
 
         //find order of operations
-        if( numbers[i] == 0)
-            operations(argString[i+1], tracker, place, i);
-
-        
-        
         ++i;
+    }
+    
+    for( i = 0; i < (argCounter - 1); ++i)
+    {
+        if( numbers[i] == 0)
+            tracker[i] = operations(argString[i+1], numbers, i);
     }
 
     ///REMOVE THIS PART OF WLOOP REMOVE THI S NATHAN
-    i = 0;
+    /*i = 0;
     while( i < 5)
     {
         printf("\nnumber: %d operation: %d place: %d ", numbers[i], tracker[i], place[i]);
         ++i;
-    }
+    }*/
     /////////////
 
-    //preform the calculations
-    for( i = 1; i < argCounter -1; ++2)
-    {
-        x = calc(argString[i+1], tracker, numbers, place[i+1]);
-    }
 }
 
 
@@ -59,40 +56,40 @@ int number(char argString[])
 
 
 //tracking order for operations
-void operations(char argStringC[], int tracker[], int place[], int i)
+int operations(char argStringC[], int numbers[], int i)
 {
-    int value;
-    
-    if( argStringC[0] == '+')
-        tracker[0] = 1;
-    else if( argStringC[0] == '-')
-        tracker[1] = 2;
-    else if( argStringC[0] == '*')
-        tracker[2] = 3;
-    else if( argStringC[0] == '/')
-        tracker[3] = 4;
-    place[i] = i;
 
-}
+    int value = 0;
+    printf("%c\n", argStringC[0]);
 
-
-//my calcultor in action
-int calc(char argString[], int tracker[], int numbers[], int place[])
-{
-    int pos[5];
-    int first, second, value;
-
-    for( int i = 0; i < 5; ++i)
+    switch(argStringC[0])
     {
-        
-
-
-
+        case '+':
+            printf("add\n");
+            printf("%d %d\n", numbers[i-1], numbers[i+1]);
+            value = numbers[i-1] + numbers[i+1];
+            printf("value %d\n", value);
+            break;
+        case '-':
+            printf("sub\n");
+            value = numbers[i-1] - numbers[i+1];
+            printf("value %d\n", value);
+            break;
+        case '*':
+            printf("mutli\n");
+            value = numbers[i-1] * numbers[i+1];
+            printf("value %d\n", value);
+            break;
+        case '/':
+            printf("divi\n");
+            value = numbers[i-1] / numbers[i+1];
+            printf("value %d\n", value);
+            break;
+        default:
+            printf("Invalid operator");
     }
-    
-
-    
-
-
     return value;
+
 }
+
+

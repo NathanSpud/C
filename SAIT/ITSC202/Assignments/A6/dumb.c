@@ -40,7 +40,7 @@ void main(int argCounter, char *argString[])
     /////////////
 
     //preform the calculations
-    for( i = 1; i < argCounter - 1; i+=2)
+    for( i = 1; i < argCounter - 1; i = i + 2)
     {
         x = calc(argString[i+1], tracker, numbers, place);
     }
@@ -62,8 +62,7 @@ int number(char argString[])
 //tracking order for operations
 void operations(char argStringC[], int tracker[], int place[], int i)
 {
-    int value;
-    
+   
     if( argStringC[0] == '+')
         tracker[0] = 1;
     else if( argStringC[0] == '-')
@@ -85,20 +84,9 @@ int calc(char argString[], int tracker[], int numbers[], int place[])
     int second = tracker[3];
     int value;
 
-    if(tracker[1]>tracker[3])
-        {
-            if(tracker[3] = )
-                {
 
-                }
-                
-        
-        }
-        
 
-    
 
-    
 
 
     return value;
